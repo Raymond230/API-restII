@@ -1,10 +1,8 @@
-const express = require('express');
-
+const express = require("express");
+const routes = require('./routes/index')
 const app = express()
-
-app.get('/',(req,res)=>{
-    res.send('hello,world igor')
-})
+app.use(express.json())
+app.use(routes)
 
 const PORT = 3333;
-app.listen(PORT,()=> console.log(`Serve is running on Port ${PORT}` ));
+app.listen(PORT, () => console.log(`Serve is running on Port ${PORT}`));
